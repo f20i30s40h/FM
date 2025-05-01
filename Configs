@@ -227,6 +227,7 @@ function Configs:AddBill(part, color, text, enabled, ttf)
     TL.Text = text
     TL.TextSize = 15
     TL.TextColor3 = color
+    TL.TextScaled = true
     TL.Parent = BG
     BG.Parent = part
    else
@@ -264,6 +265,7 @@ function Configs:AddESP(part, color, text, enabled, ttf)
     TL.Text = text
     TL.TextSize = 15
     TL.TextColor3 = color
+    TL.TextScaled = true
     TL.Parent = BG
     BG.Parent = part
    else
