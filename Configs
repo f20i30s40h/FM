@@ -211,7 +211,7 @@ function Configs:AddHigh(part, color, Ft, Ot, enabled)
     HL.Enabled = enabled
   end
 end
-function Configs:AddBill(part, color, text, enabled, ttf)
+function Configs:AddBill(part, color, text, enabled, ts, ttf)
   local bg = part:FindFirstChild("BG")
   if not bg then
     local BG = Instance.new("BillboardGui", workspace)
@@ -225,7 +225,7 @@ function Configs:AddBill(part, color, text, enabled, ttf)
     TL.Size = UDim2.new(0, 100, 0, 50)
     TL.FontFace = Font.fromId(ttf or 12187376739)
     TL.Text = text
-    TL.TextSize = 15
+    TL.TextSize = ts or 15
     TL.TextColor3 = color
     TL.TextScaled = true
     TL.Parent = BG
@@ -238,7 +238,7 @@ function Configs:AddBill(part, color, text, enabled, ttf)
     BG.Enabled = enabled
   end
 end
-function Configs:AddESP(part, color, text, enabled, ttf)
+function Configs:AddESP(part, color, text, enabled, ts, ttf)
   local hl = part:FindFirstChild("HL")
   local bg = part:FindFirstChild("BG")
   if not hl then
@@ -263,7 +263,7 @@ function Configs:AddESP(part, color, text, enabled, ttf)
     TL.Size = UDim2.new(0, 100, 0, 50)
     TL.FontFace = Font.fromId(ttf or 12187376739)
     TL.Text = text
-    TL.TextSize = 15
+    TL.TextSize = ts or 15
     TL.TextColor3 = color
     TL.TextScaled = true
     TL.Parent = BG
