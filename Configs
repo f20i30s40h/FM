@@ -229,12 +229,18 @@ function Configs:AddBill(part, color, text, enabled, ts, ttf)
     TL.TextColor3 = color
     TL.Parent = BG
     BG.Parent = part
+    if not enabled then
+      TL.Text = ""
+    end
    else
     local BG = bg
     local TL = BG:FindFirstChild("TextLabel")
     TL.Text = text
     TL.TextColor3 = color
     BG.Enabled = enabled
+    if not enabled then
+      TL.Text = ""
+    end
   end
 end
 function Configs:AddESP(part, color, text, enabled, ts, ttf)
@@ -266,12 +272,18 @@ function Configs:AddESP(part, color, text, enabled, ts, ttf)
     TL.TextColor3 = color
     TL.Parent = BG
     BG.Parent = part
+    if not enabled then
+      TL.Text = ""
+    end
    else
     local BG = bg
     local TL = BG:FindFirstChild("TextLabel")
     TL.Text = text
     TL.TextColor3 = color
     BG.Enabled = enabled
+    if not enabled then
+      TL.Text = ""
+    end
   end
 end
 function Configs:ESP(Thing, color, text, Num, OnOff)
