@@ -1,6 +1,5 @@
 local Configs = {}
 
-
 function SetNotify(title, text, Type, image, tTime, OutlineColor, Callback)
   local GUI = game:GetService("CoreGui"):FindFirstChild("STX_Nofitication")
   if not GUI then
