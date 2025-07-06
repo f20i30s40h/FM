@@ -311,7 +311,18 @@ function Configs:ESP(Thing, color, text, Num, OnOff)
   end
 end
 function Configs:Loop(mode, callback)
-  if mode == "Stepped" then
+  return game["Run Service"].({
+    ["Stepped"] = Stepped,
+    ["PreRender"] = PreRender,
+    ["PostRender"] = PostRender,
+    ["RenderStepped"] = RenderStepped,
+    ["Heartbeat"] = Heartbeat,
+    ["PreSimulation"] = PreSimulation,
+    ["PostSimulation"] = PostSimulation,
+    ["PreAnimation"] = PreAnimation,
+    ["PhysicsStepped"] = PhysicsStepped
+  })[mode]
+  --[[if mode == "Stepped" then
     return game["Run Service"].Stepped:Connect(callback)
    elseif mode == "PreRender" then
     return game["Run Service"].PreRender:Connect(callback)
@@ -319,7 +330,7 @@ function Configs:Loop(mode, callback)
     return game["Run Service"].RenderStepped:Connect(callback)
    elseif mode == "Heartbeat" then
     return game["Run Service"].Heartbeat:Connect(callback)
-  end
+  end]]
 end
 function Configs:UILib(title, mini, bg)
   return loadstring(game:HttpGet("https://raw.github.com/f20i30s40h/Library/main/Own.lua"))():Window(title, Color3.fromRGB(0, 255, 0), Enum.KeyCode.RightControl, bg or "rbxassetid://16566826551", mini or "rbxassetid://16006928879")
