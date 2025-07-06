@@ -321,7 +321,7 @@ function Configs:Loop(mode, callback)
     ["PostSimulation"] = PostSimulation,
     ["PreAnimation"] = PreAnimation,
     ["PhysicsStepped"] = PhysicsStepped
-  })[mode]
+  })[mode]:Connect(callback)
   --[[if mode == "Stepped" then
     return game["Run Service"].Stepped:Connect(callback)
    elseif mode == "PreRender" then
