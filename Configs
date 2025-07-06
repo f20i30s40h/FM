@@ -311,7 +311,7 @@ function Configs:ESP(Thing, color, text, Num, OnOff)
   end
 end
 function Configs:Loop(mode, callback)
-  return game["Run Service"].({
+  return game["Run Service"][({
     ["Stepped"] = Stepped,
     ["PreRender"] = PreRender,
     ["PostRender"] = PostRender,
@@ -321,7 +321,7 @@ function Configs:Loop(mode, callback)
     ["PostSimulation"] = PostSimulation,
     ["PreAnimation"] = PreAnimation,
     ["PhysicsStepped"] = PhysicsStepped
-  })[mode]:Connect(callback)
+  })[mode]]:Connect(callback)
   --[[if mode == "Stepped" then
     return game["Run Service"].Stepped:Connect(callback)
    elseif mode == "PreRender" then
